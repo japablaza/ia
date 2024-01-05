@@ -1,14 +1,12 @@
 #!/usr/bin/python
 
-# Create a text file with the output coming from Gemini API
+with open("respuesta.txt", "r") as file:
+    first_line = file.readline()
 
-# Create a function  that check for the file on the directorys
-import glob
-import os
+print("Titulo: ", first_line)
 
-current_dir = os.getcwd()
-local_dir = glob.glob(current_dir + "/*.py")
+with open("respuesta.txt", "r") as file2:
+    lines = file2.readlines()[1:]
 
-print(local_dir)
-
-print(os.listdir())
+for line in lines:
+    print(line)
